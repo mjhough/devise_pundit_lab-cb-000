@@ -12,6 +12,7 @@ class NotesController < ApplicationController
   end
 
   def update
+    @note = Note.find(params[:id])
     @note.update(note_params)
     redirect_to '/'    
   end
@@ -21,6 +22,7 @@ class NotesController < ApplicationController
   end
   
   def show
+    @note = Note.find(params[:id])
   end
 
   def index
